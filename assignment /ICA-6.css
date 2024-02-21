@@ -1,7 +1,10 @@
-<style>
-        {
+
+
+    body
+    {
         box-sizing: border-box;
-      }
+      
+    }
       
       html {
         font-family: sans-serif;
@@ -59,4 +62,3 @@
       }
       
       /* Your CSS below here */
-</style>
