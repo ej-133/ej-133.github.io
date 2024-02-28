@@ -1,0 +1,19 @@
+.narrowScreen{
+    background-color: purple;
+    width: 75%;
+    color: green;
+}
+.wideScreen{
+    max-height: 75%;
+    color: yellow
+}
+.shortScreen{
+    width: 500px;
+    color: turquoise;
+
+}
+.tallScreen{
+
+    max-height: 800px;
+    color: lavender;
+}
