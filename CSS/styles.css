@@ -36,7 +36,7 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content: space between;
+    justify-content: space-between;
   }
   
   nav a {
@@ -61,9 +61,7 @@ body {
       float: left;
       margin: 5px;
   }
-  @media screen and (max-width:500px){
-
-  }
+  @media screen and (max-width:500px) {
   .grid{
     flex-direction: 1fr;
     gap: 10px;
@@ -74,3 +72,4 @@ body {
     align-items: center;
 
   }
+}
