@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    body{
+
+}
+
+    #box1{
+        width: 25vw;
+        height: 20vh;
+        background-color: indianred;
+        animation-duration: 3s;
+        transition: width 4s, height 3s, background-color 2s, scale 5px, padding 2s;
+        
+    }
+    #box1:hover{
+        background-color: purple;
+        width: 250px;
+        height: 250px;
+        scale: 160deg;
+        padding: 40%;
+        }
+
+    #box2{
+        width: 25vw;
+        height:20vh;
+        position: relative;
+        background-color: orangered;
+        animation-name: box2move;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes box2move{
+        from{
+            margin:0;
+        }
+        25%{
+            margin-left: 25%;
+        }
+        50%{
+            margin: bottom 0%;
+        }
+        75%{
+            margin-right: 25%%;
+        }
+        to{
+            margin-left: 0%;
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <p>
+            Make me turn purple when hovered.
+        </p>
+    </div>
+
+    <div id="box2">
+        <p>
+            Make me move around.
+        </p>
+    </div>
+
+</body>
+</html>

@@ -1,7 +1,28 @@
 body{
     background-color: olive;
 }
-
+@keyframes slidein {
+    0%{
+        margin-left: 100%;
+        width: 300%;
+        color: aqua;
+    }
+    25%{
+        margin-left: 75%;
+        width: 175%;
+        color: pink;
+    }
+    75%{
+        margin-left: 50%;
+        width: 125%;
+        color: goldenrod;
+    }
+    100%{
+        margin-left: 0;
+        width: 100%;
+        color: greenyellow;
+    }
+}
 
 #flex-parent{
     background-color: orangered;
