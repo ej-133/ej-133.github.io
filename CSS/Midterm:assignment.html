@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="midterm" >
+    <title>J.Cole/Drake Concert Tickets</title>
+    <style>
+    body{
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        color: pink;
+        background-color: purple;
+      }
+    h1{
+      align-content: center;
+    }
+    nav{
+          height: 50vh;
+          display:flex;
+          flex-direction: row;
+          justify-content:space-between;
+          height:20px;
+          background-color:greenyellow;
+          position:sticky;
+      }
+    nav a{
+        width:10vw;
+        text-decoration: none;
+        color:red;
+        position: sticky;
+
+    }
+    .column {
+      float:right;
+      width: 15.55%;
+      padding: 5px;
+	  }
+
+    .container::after{
+      content: "";
+      clear:both;
+      display:table;
+    }
+
+
+	  img {
+	  width: 11em;
+	  }	
+    footer{
+      text-align:center;
+    }
+    .song {
+    font-size: larger;
+    width: 80vw;
+    height: 10vh;
+    padding: 5px;
+    border: 5px solid gray;
+    margin: 15%;
+    column-count: 3;
+    column-gap: 20%;
+    column-rule-width: 5%;
+    animation-name: animateImage;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  .loc {
+    font-size: larger;
+    width: 80vw;
+    height:  10vh;
+    padding: 5px;
+    border: 5px solid gray;
+    margin: 15%;
+    column-count: 3;
+    column-gap: 20%;
+    column-rule-width: 5%;
+  }
+  .tics {
+    font-size: larger;
+    width: 80vw;
+    height:  10vh;
+    padding: 5px;
+    border: 5px solid gray;
+    margin: 15%;
+    column-count: 3;
+    column-gap: 20%;
+    column-rule-width: 5%;
+  }
+  @keyframes animateImage{
+        to{
+            margin-right: 0%;
+        }
+        from{
+            width:30vw;
+            height: 30vh;
+            margin-left: 100%;
+        }
+  }
+  
+  </style>
+</head>
+<body>
+
+    <nav>
+
+            <a href="">Home</a>
+
+            <a href="#Tickets">Tickets</a>
+
+            <a href="#Songs/Ablums">Songs/Ablums</a>
+
+            <a href="#Locations">Locations</a>
+
+
+      </nav>
+    <h1>Concert Tickets For J.Cole and Drake</h1>
+
+    <div id class="container">
+      <div class="column">
+        <img src="../img/Leftside.png" alt="placeholder">
+      </div>
+      <div class="column">
+        <img src="../img/Left.side pt.2.png" alt="placeholder">
+      </div>
+      <div class="column">
+        <img src="../img/middle pt.1.png" alt="placeholder">         
+      </div>
+
+      <div class="column">
+        <img src="../img/middle pt.2.png" alt="placeholder">
+     </div>
+     <div class="column">
+        <img src="../img/right side pt.1.png" alt="placeholder">
+     </div>
+     <div class="column">
+        <img src="../img/right side pt.2.png" alt="placeholder">         
+     </div>
+    </div>
+    <h2> Home </h2>
+
+    <h2>Tickets</h2>
+    <p class= "tics" id="Tickets">
+      July 24/25th   400$ Front Stage  
+      July 24/25th   400$ Nosebleads   
+      July 24/25th   400$ Stadium     
+      August 8th     400$ Front Stage  
+      August 8th     400$ Nosebleads   
+      August 8th     400$ Stadium      
+      August 16/17th 400$ Front Stage  
+      August 16/27th 400$ Nosebleads  
+      July 24/25th 400$   Stadium     
+      <a>Buy Now</a>
+    </p>
+
+    <h2> Songs/Ablums </h2>
+    <p class="song" id="Songs/Ablums">
+      Thank Me Later         More Life     For All the Dogs
+         2010                 2017             2009
+      Nothing Was The Same   Views           Take Care
+         2010                 2017             2009
+      2014 Forest Drive     ColeWorld       The Off-Season
+         2014                 2011             2021
+      4 Your Eyez Only      Born-Sinner     Friday Night Lights
+         2016                 2013             2010
+    </p>
+
+
+    <h2> Locations </h2>
+    <p class="loc" id="locations">
+      July 24/25th   Calafornia   Los Angeles Exepidition Park 
+      3911 S Figueroa St, Los Angeles, CA 90037 
+
+      August 8th     Colorado     Denver The Mission Room Ball
+      4242 Wynkoop St, Denver, CO 80216
+
+      August 16/17th New York     Manhattan  Rockfellar Center
+      1260 6th Ave, New York, NY 10020
+
+
+    </p>
+    <footer> 
+      Contact us 
+      <div class="contacting"> Email us or contact us at: ElRE3593@colorado.edu
+        1-323-809-5445
+         </div>
+    </footer>
+
+</body>
+</html>
+
+

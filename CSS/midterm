@@ -1,0 +1,21 @@
+<style>
+    body{
+        color:aqua;
+        display:flex
+    }
+    nav{
+        height: 50vh;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height:20px;
+        background-color:greenyellow;
+    }
+    nav a{
+        width:10vw;
+        text-align: center;
+        text-decoration: none;
+        color:red;
+    }
+
+</style>
