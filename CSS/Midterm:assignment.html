@@ -22,15 +22,14 @@
           flex-direction: row;
           justify-content:space-between;
           height:20px;
-          background-color:greenyellow;
+          background-color:blueviolet;
           position:sticky;
       }
     nav a{
         width:10vw;
         text-decoration: none;
-        color:red;
+        color:pink;
         position: sticky;
-
     }
     .column {
       float:right;
@@ -44,59 +43,93 @@
       display:table;
     }
 
-
 	  img {
 	  width: 11em;
 	  }	
+
     footer{
       text-align:center;
     }
     .song {
+    text-size-adjust: 30%;
     font-size: larger;
     width: 80vw;
     height: 10vh;
     padding: 5px;
     border: 5px solid gray;
     margin: 15%;
+    display: flex; 
     column-count: 3;
     column-gap: 20%;
-    column-rule-width: 5%;
+    column-rule-width: 10%;
     animation-name: animateImage;
     animation-duration: 3s;
-    animation-iteration-count: infinite;
+    animation-iteration-count: 1s;
+    animation-name: animatesong;
+    animation-duration: 3s;
+    animation-iteration-count: 1s;
   }
   .loc {
-    font-size: larger;
-    width: 80vw;
-    height:  10vh;
+    width: 50vw;
+    height: 50vh;
     padding: 5px;
     border: 5px solid gray;
     margin: 15%;
     column-count: 3;
-    column-gap: 20%;
-    column-rule-width: 5%;
+    column-gap: 30%;
+    column-rule-width: 10%;
+    animation-name: animateloc;
+    animation-duration: 3s;
+    animation-iteration-count: 1s;
   }
   .tics {
     font-size: larger;
     width: 80vw;
     height:  10vh;
     padding: 5px;
+    display: flex 10%;
     border: 5px solid gray;
     margin: 15%;
     column-count: 3;
     column-gap: 20%;
     column-rule-width: 5%;
+    animation-name: animatetic;
+    animation-duration: 3s;
+    animation-iteration-count: 1s;
   }
-  @keyframes animateImage{
+  @keyframes  animatesong{
         to{
             margin-right: 0%;
         }
         from{
             width:30vw;
             height: 30vh;
-            margin-left: 100%;
+            margin-left: 50%;
         }
   }
+  @keyframes  animateloc{
+        to{
+            margin-left: 0%;
+        }
+        from{
+            width:30vw;
+            height: 30vh;
+            margin-right: 50%;
+        }
+  }
+  @keyframes  animatetic{
+        to{
+            margin-top: 0%;
+        }
+        from{
+            width:30vw;
+            height: 30vh;
+            margin-bottom: 50%;
+        }
+  }
+
+
+  
   
   </style>
 </head>
@@ -118,23 +151,23 @@
 
     <div id class="container">
       <div class="column">
-        <img src="../img/Leftside.png" alt="placeholder">
+        <img src="../img/Right pt.1.png" alt="drake">
       </div>
       <div class="column">
-        <img src="../img/Left.side pt.2.png" alt="placeholder">
+        <img src="../img/Right pt.2.png" alt="J.cole">
       </div>
       <div class="column">
-        <img src="../img/middle pt.1.png" alt="placeholder">         
+        <img src="../img/Middle pt.1.png" alt="J.cole">         
       </div>
 
       <div class="column">
-        <img src="../img/middle pt.2.png" alt="placeholder">
+        <img src="../img/Middle. pt.2.png" alt="Drake">
      </div>
      <div class="column">
-        <img src="../img/right side pt.1.png" alt="placeholder">
+        <img src="../img/Left pt.1.png" alt="drake">
      </div>
      <div class="column">
-        <img src="../img/right side pt.2.png" alt="placeholder">         
+        <img src="../img/left pt.2.png" alt="placeholder">         
      </div>
     </div>
     <h2> Home </h2>
