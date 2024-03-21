@@ -2,7 +2,7 @@ const customName = document.getElementById('customname');
 const randomize = document.querySelector('.randomize');
 const story = document.querySelector('.story');
 
-const storyText= "It was 94 fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.";
+const storyText= "It was 86 fahrenheit outside, so :insertx: went for a walk. I went to  :inserty:, straight to Snarf Burger, then :insertz:. got this big milkshake from EJ, and he looked handsome — :insertx: the wieght was 200 pounds, and it was a snowday.";
 const insertX= ["Willy the Goblin Big Daddy Father Christmas"];
 const insertY = ["the soup kitchen Disneyland the White House"];
 const insertz = ["spontaneously combusted melted into a puddle on the sidewalk turned into a slug and crawled away"];
@@ -21,13 +21,13 @@ let xItem=randomValueFromArray(insertX)
 let yItem=randomValueFromArray(insertY)
 let zItem=randomValueFromArray(insertz)
 
-newStory= newStory.replace(":insertx:", xItem)
+newStory= newStory.replaceAll(":insertx:", xItem)
 newStory= newStory.replace(":inserty:", yItem)
 newStory= newStory.replace(":insertz:", zItem)
 
   if(customName.value !== '') {
     const name = customName.value;
-    newStory = newStory.replace("Bob",name);
+    newStory = newStory.replace("EJ",name);
   }
 
   if(document.getElementById("uk").checked) {
@@ -35,7 +35,7 @@ newStory= newStory.replace(":insertz:", zItem)
     weight = weight + "stone";
     let temperature =  Math.round((94-32)*(5/9));
     temperature = temperature + "centrigrade"
-    newStory = newStory.replace("300 pounds",weight);
+    newStory = newStory.replace("200 pounds",weight);
     newStory = newStory.replace("94 fahrenheit",temperature)
 
   }
