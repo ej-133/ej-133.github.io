@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script src="week10.js" defer></script>
+    <script src="week10.js" async></script>
+    <style>
+        button{
+            font-family:'Times New Roman', Times, serif;
+            color:red;
+            border:1px black;
+            width: 500px;
+            height: 400px;
+            font-size: 100px;
+    }
+    </style>
+<body>
+    <h1>this is text</h1>
+    <button type="button"> hello !</button>
+    <h1>this is text</h1>
+    <button id="button2"> hello !</button>
+
+    <script>
+        const button1 = document.querySelector("button");
+        button1.addEventListener(`click`,changeText);
+
+        const button2 = document.getElementsByClassName(".button2");
+        button2.addEventListener(`click`,changeText)
+
+       
+        //const button = document.querySelectorall;
+       // conosle.log(button)
+       // for (const b in button){
+        //    b.addEventListener('click', changeText);
+      //  }
+
+        //const heading= document.querySelectorall("h1");
+        
+        //function changeText (){
+            //alert(`text successful`);
+            //const head = prompt ("tell me a scaret");
+            //heading.textContent = `boooo`:
+
+            //console.log("test");
+            //function runfunction (){
+   
+        //}
+    
+
+    </script>
+</body>
+</html>
