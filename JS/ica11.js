@@ -3,11 +3,11 @@ btn.addEventListener('click',getQuote);
 
 const endpoint ='https://trivia.cyberwisp.com/getrandomchristmasquestion';
 
-
+const answerBtn = document.querySelector('#js-tweet'); 
 answerBtn.addEventListener('click',getAnswer);
-const answerBtn = document.querySelector('#js-tweet');
 
-const answerText=document.querySelector('#js-answer-text')
+
+const answerText=document.querySelector('#js-answer-text');
 
 let answer = '';
 
@@ -17,6 +17,7 @@ async function getQuote(){
         if (!response.ok){
             throw Error(response.statusText)
         }
+        
         const json= await response.json();
         console.log(json['question']);
         displayQuote(json['question']);
@@ -34,6 +35,6 @@ async function getQuote(){
         quoteText.textContent = quote;
     }
     function getAnswer(){
-        answerText.textcontent=answer;
+        answerText.textContent=answer;
     }
 getQuote();
