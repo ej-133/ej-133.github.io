@@ -14,6 +14,7 @@
 body {
   width: 300px;
   margin: 0 auto;
+  background-color: pink;
 }
 
 .full-img {
@@ -52,11 +53,11 @@ button {
 </style>
 
 <body>
-    <h1>Image gallery example</h1>
+    <h1>I am Nice</h1>
     <div class="full-img">
     <img
         class="displayed-img"
-        src="pic1.jpg" 
+        src="EJ.JPG" width="400" height="450"
         alt="Closeup of EJ" />
   <div class="overlay"></div>
   <button class="dark">Darken</button>
@@ -65,7 +66,7 @@ button {
    <div class="thumb-bar"></div>
 
     <script>
-        const displayedImage=document.querySelector('.display-img');
+        const displayedImage=document.querySelector('.displayed-img');
         const thumbBar=document.querySelector('.thumb-bar');
 
         const btn =document.querySelector('button');
@@ -77,9 +78,9 @@ button {
             console.log(newImage.src)
         }
         
-        const pics= ["pic1.jpg","pic2.jpg","pic3.jpg","pic4.jpg","pic5.jpg"];
+        const pics= ["EJ.JPG","EJJJ.png","RA photo.jpeg","Middle pt.1.png","CALI.png"];
 
-        const alts= ["J.cole",".its me","I think drake","oh I look good","pretty images"]
+        const alts= ["hey its me","I look good","THose are people I work with","J.cole!!","Cali's the best"]
         for (let i = 0; i<5;i++){
             const newImage =document.createElement('img');
             newImage.setAttribute('src',pics[i]);
