@@ -13,7 +13,7 @@
         box-sizing: border-box;
       }
     </style>
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="" />
   </head>
 
   <body>
@@ -29,6 +29,9 @@
   <script>
     const section = document.querySelector('section');
 
+
+   
+
     let para1 = document.createElement('p');
     let para2 = document.createElement('p');
     let motherInfo = 'The mother cats are called ';
@@ -43,19 +46,18 @@
       let total = 0;
       let male = 0;
       const request = new Request(requestURL);
-      const response = await fetch(request);
-      const motherInfo =await response.json();
 
-      populateSection(motherInfo)
-      populatemotherinfo(motherInfo)
+      const response =  fetch(request);
+      const motherInfo =  response.json();
+      console.log(json[motherInfo])
+      displayCatInfo(json(motherInfo))
 
-      // Add your code here
-
-      // Don't edit the code below here!
+    
+      }
 
       para1.textContent = motherInfo;
       para2.textContent = kittenInfo;
-    }
+  
 
     section.appendChild(para1);
     section.appendChild(para2);
