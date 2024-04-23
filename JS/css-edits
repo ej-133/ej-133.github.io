@@ -1,0 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const decreaseButton = document.querySelector('.decrease-volume-button');
+  const increaseButton = document.querySelector('.increase-volume-button');
+  const volumeLevel = document.querySelector('.volume-level');
+
+  decreaseButton.addEventListener('click', function() {
+    let currentVolume = parseInt(volumeLevel.textContent);
+    currentVolume += 10;
+    volumeLevel.textContent = currentVolume;
+  });
+
+  increaseButton.addEventListener('click', function() {
+    let currentVolume = parseInt(volumeLevel.textContent);
+    currentVolume -= 10;
+    volumeLevel.textContent = currentVolume;
+  });
+});

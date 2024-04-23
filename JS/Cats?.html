@@ -34,7 +34,7 @@
 
     let para1 = document.createElement('p');
     let para2 = document.createElement('p');
-    let motherInfo = 'The mother cats are called ';
+
     let kittenInfo;
     const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/tasks/json/sample.json';
 
@@ -43,17 +43,26 @@
     .then(text => displayCatInfo(text))
 
     function displayCatInfo(catString) {
-      let total = 0;
-      let male = 0;
+      let total = 8;
+      let male = 4;
       const request = new Request(requestURL);
-
-      const response =  fetch(request);
+    }
       const motherInfo =  response.json();
       console.log(json[motherInfo])
       displayCatInfo(json(motherInfo))
 
-    
+      const response= await fetch(endpoint);
+        if (!response.ok){
+            throw Error(response.statusText)
+        
+        
+        const json= await response.json();
+        displayCatInfo(json[0]['name']);
+        console.log(json[2]['text']);
+
       }
+    
+    
 
       para1.textContent = motherInfo;
       para2.textContent = kittenInfo;
