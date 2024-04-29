@@ -7,60 +7,91 @@
     <style>
         body{
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            display:flex;
+
             background-color: aqua;
 
         }
-        .h1{
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        #title{
+            align-items: center;
+            flex-direction: column;
+            font-size: 200%;
+            padding: 50px 20px;
+            margin: center;
+            max-width: 980px;
+            background-color: gray;
+            position: sticky;
+            top: 1px;
         }
 
+
         img{
-            display:flex;
-            flex-wrap:wrap;
+
             justify-content: center;
             gap:10px;
             max-width: 200px;
             max-height: 300px;
         }
+        .grid {
+            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr; 
+            gap: 15px;
+            animation-name: animateImage;
+            animation-duration: 3s;
+            animation-iteration-count: one;
+        }
+        @keyframes animateImage{
+        to{
+            margin-right: 0%;
+        }
+        from{
+            width:30vw;
+            height: 30vh;
+            margin-left: 100%;
+        }
+    }
 
     </style>
 </head>
 <body>
+    <div id="title">
     <h1>
-        ClICK ON A BOOK YOU WANT TO LEARN ABOUR
+        ClICK ON A BOOK YOU WANT TO LEARN ABOUT
     </h1>
+    </div>
 
-
-    <div class="Poet">
+    <main class="grid">
+    <div >
     <a href="Poet-X.html">
     <img src="Poet-X.png" onclick=Poet-X.html alt="the Poet X book">
     </a>
     </div>
-    <div class="stamp">
+    <div >
         <a href="Stamped-book.html">
         <img src="Stamped.png" onclick=Poet-X.html alt="the Poet X book">
         </a>
     </div>
-    <div class="darus">
+    <div >
         <a href="DarusTG.html">
         <img src="Darus-the-great.png" onclick=Poet-X.html alt="the Poet X book">
         </a>
     </div>
-    <div class="fire">
+    <div >
         <a href="Firekeeper.html">
         <img src="Fire-keeper.png" onclick=Poet-X.html alt="the Poet X book">
         </a>
     </div>
-    <div class="happy">
-        <a href="More:than:happy.html">
+    <div >
+        <a href="Morethanhappy.html">
         <img src="More than happy.png" onclick=Poet-X.html alt="the Poet X book">
         </a>
     </div>
-    <div class="maker">
+    <div >
         <a href="Dressmaker.html">
         <img src="dressmaker.png" onclick=Poet-X.html alt="the Poet X book">
         </a>
     </div>
+    </main>
 </body>
 </html>
