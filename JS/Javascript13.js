@@ -104,3 +104,50 @@ function loop(){
 }
 loop();
 //bounce off each other for extra credit
+
+const element = document.getElementById("increase-volume-button");
+    const button= document.querySelector("click");
+    let done = false;
+
+    function step(increase-volume-button) {
+    if (start === undefined) {
+      start = timeStamp;
+    }
+    const elapsed = timeStamp - start;
+
+    if (previousTimeStamp !== timeStamp) {
+    
+    const count = Math.min(0.1 * elapsed, 200);
+    element.style.transform = `translateX(${count}px)`;
+    if (count === 200) done = true;
+  }
+
+    if (elapsed < 2000) {
+      // Stop the animation after 2 seconds
+      previousTimeStamp = timeStamp;
+      if (!done) {
+        window.requestAnimationFrame(step);
+      }
+  }
+}
+})
+let done = false;
+function increaseVolume() {
+var audio = document.getElementById("increaseVolume");
+if (audio.volume < 1.0) {
+audio.volume += 0.1; 
+moveVolumeButton(increaseVolume); 
+}
+if (elapsed < 2000) {
+  // Stop the animation after 2 seconds
+  previousTimeStamp = timeStamp;
+  if (!done) {
+    window.moveVolumeButton();
+  }
+}
+
+function moveVolumeButton() {
+var button = document.getElementById("increase-volume-button");
+var newLeft = parseInt(button.style.left) + 20; // Move button 20 pixels to the right
+button.style.left = newLeft + "px";
+}
