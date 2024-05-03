@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volume Game!</title>
+    <link rel="stylesheet" href="">
+    <style>
+
+    .increase-volume {
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .decrease-volume{
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: #red;
+        border: none;
+        cursor: pointer;
+    }
+
+    .volume-level {
+    position: absolute;
+    top:50%;
+    left:50%;
+    font-size: 24px;
+    margin: 0 20px;
+    }
+
+    </style>
+</head>
+<body>
+    <button id="increase" class="increase-volume">Increase Volume</button>
+
+    <button id="decrease" class="decrease-volume"> Decrease Volume</button>
+    <div class="volume-control">
+        <span class="volume-level">100</span>
+    </div>
+
+    <script>
+        const button1 = document.getElementById('increase');
+        const button2 = document.getElementById('decrease');
+        const volume = document.querySelector(".volume-level");
+
+        let speed = volume.innerText/50
+        let direction= 1;
+
+        button1.addEventListener("click", function() {
+            let vol = volume.innerText
+            vol = parseInt(vol);
+            vol+= 10
+            volume.innerText = vol
+            speed= volume.innerText/50
+        });
+
+        button2.addEventListener("click", function() {
+            let vol = volume.innerText
+            vol = parseInt(vol);
+            vol-= 10
+            volume.innerText = vol
+            speed = volume.innerText/50
+        });
+
+        // Function to move a button to a random position
+        function moveButton(button) {
+            const newTop = Math.random() * window.innerHeight;
+            const newLeft = Math.random() * window.innerWidth;
+            button.style.top = newTop + 'px';
+            button.style.left = newLeft + 'px';
+        }
+
+        // Add click event listeners to the buttons
+        button1.addEventListener('click', function() {
+            moveButton(button1);
+        });
+
+        button2.addEventListener('click', function() {
+            moveButton(button2);
+        });
+    </script>
+</body>
+</html>
