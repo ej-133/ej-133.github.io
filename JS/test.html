@@ -3,77 +3,223 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Button Pop-up Ads</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Submit Button Example</title>
   <style>
-    .popup {
-        display: none;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: white;
-        padding: 20px;
-        border: 1px solid #ccc;
-        z-index: 1000;
+
+        body{
+            background-color: black;
         }
 
-    .close {
+        .moveButton {
+        position: relative;
+        top: 25%;
+        left: 10%;
+        background-color: green;
+        padding: 10px 20px;
+        color: white;
+        transition: left 0.5s ease-in-out;
+        }
+
+        .moveButton2{
+        position: relative;
+        top: 30%;
+        left: 40%;
+        background-color: red;
+        padding: 10px 20px;
+        color: white;
+        transition: left 0.5s ease-in-out;
+        }
+
+        .hint{
+        position:absolute;
+        background-color: white;
+        top: 50%;
+        left:50%;
+        }
+
+
+        .fake-increase{
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 75%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border: none;
         cursor: pointer;
         }
-            
+
+        .increase-volume {
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        }
+        .decrease-volume{
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: red;
+        color:#fff;
+        border: none;
+        cursor: pointer;
+        }
+
+        .fake-decrease{
+        position: absolute;
+        top: 90%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: red;
+        color:#fff;
+        border: none;
+        cursor: pointer;
+        }
+
+        .gottem{
+            position: absolute;
+            top: 45%;
+            left: 80%;
+
+            padding: 10px 20px;
+            background-color: red;
+            color:#fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .HAHA{
+            position: absolute;
+            top: 15%;
+            left: 35%;
+            padding: 10px 20px;
+            background-color: green;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        p{
+            position: absolute;
+            top: 60%;
+            left: 50%; 
+            color: whitesmoke;
+        }
   </style>
 </head>
-
 <body>
-  <button id="button1">Button 1</button>
-  <button id="button2">Button 2</button>
 
-  <script>
-        document.getElementById("button1").addEventListener("click", function() {
-        var popup1 = document.createElement("div");
-        popup1.classList.add("popup");
+    <button id="button1" class="moveButton">Increase Volume</button>
+    <button id="button2" class="moveButton2">Decrease Volume</button>
+    <p>Volume = <span id="value1">0</span></p>
+    <button id="fake-increase" class="increase-volume"> Increase Volume</button>
+    <button class="hint"id="help">Click For Help!</button>
+    <button id="fake-decrease" class="decrease-volume">Decrease Volume</button>
+    <button id="negative" class="gottem"> Decrease Volume</button>
+    <button id="postive" class="HAHA"> Increase Volume</button>
+
+<script>
         
-        var close1 = document.createElement("span");
-        close1.classList.add("close");
-        close1.innerHTML = "&times;";
-        close1.addEventListener("click", function() {
-            document.body.removeChild(popup1);
+        function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        let value1 = 0;
+        const minValue = 0; 
+        const maxValue = 100; 
+        const help = document.getElementById("help");
+        const negative1 = document.getElementById("negative");
+        const postive1 = document.getElementById("postive");
+        
+        negative1.addEventListener('click', function(){
+            alert('Hey bud wrong choice, but good try :/')
+        });
+        postive1.addEventListener('click', function(){
+            alert('HAHAH! Now you kinda of look dumb but its okay. (thumbs up)')
         });
         
-        var content1 = document.createElement("p");
-        content1.innerHTML = "Popup 1 Content Here";
-
-        popup1.appendChild(close1);
-        popup1.appendChild(content1);
-        
-        document.body.appendChild(popup1);
+        help.addEventListener('click',function(){
+            alert('Try to find the correct increase volume! (look for a bit of white in the text book for help)! :)')
         });
 
-        document.getElementById("button2").addEventListener("click", function() {
-        var popup2 = document.createElement("div");
-        popup2.classList.add("popup");
-        
-        var close2 = document.createElement("span");
-        close2.classList.add("close");
-        close2.innerHTML = "&times;";
-        close2.addEventListener("click", function() {
-            document.body.removeChild(popup2);
-        });
-        
-        var content2 = document.createElement("p");
-        content2.innerHTML = "Popup 2 Content Here";
+        const valueDisplay1 = document.getElementById("value1");
 
-        popup2.appendChild(close2);
-        popup2.appendChild(content2);
-        
-        document.body.appendChild(popup2);
+
+        const button1 = document.getElementById("button1");
+        const button2 = document.getElementById("button2");
+
+        button1.addEventListener("click", function() {
+        if (value1 < maxValue) {
+            value1+=10;
+            valueDisplay1.innerText = value1;
+            moveButton(button1);
+        }
+        else{
+            alert("Value cannot be less than 100.");
+        }
         });
 
+        button2.addEventListener("click", function() {
+        if (value1 > minValue) {
+            value1-=10;
+            valueDisplay1.innerText = value1;
+            moveButton(button2);
+        }
+        else{
+            alert("Value cannot be less than 0.");
+        }
+        });
 
-  </script>
+    function moveButton(button) {
+        const newTop = Math.random() * window.innerHeight;
+        const newLeft = Math.random() * window.innerWidth;
+        button.style.top = newTop + 'px';
+        button.style.left = newLeft + 'px';
+        button.classList.add("moved");
+    }
+
+    function createPopupButton() {
+    const popupButton = document.createElement('button');
+    popupButton.textContent = 'increase volume';
+    popupButton.classList.add('fake-increase');
+
+
+    popupButton.style.left = getRandomNumber(0, window.innerWidth - 100) + 'px';
+    popupButton.style.top = getRandomNumber(0, window.innerHeight - 50) + 'px';
+
+    document.body.appendChild(popupButton);
+    };
+
+    document.getElementById('fake-increase').addEventListener('click', () => {
+        createPopupButton();
+    });
+
+
+    function createPopupButton2() {
+    const popupButton = document.createElement('button');
+    popupButton.textContent = 'Decrease Volume';
+    popupButton.classList.add('fake-decrease');
+
+
+    popupButton.style.left = getRandomNumber(0, window.innerWidth - 100) + 'px';
+    popupButton.style.top = getRandomNumber(0, window.innerHeight - 50) + 'px';
+
+    document.body.appendChild(popupButton);
+    };
+
+    document.getElementById('fake-decrease').addEventListener('click', () => {
+        createPopupButton2();
+    });
+
+</script>
 </body>
 </html>

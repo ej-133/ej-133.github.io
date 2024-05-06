@@ -3,50 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Popup Button</title>
+  <title>Popup Buttons</title>
+  <link>
   <style>
-    .popup-button {
-      position: absolute;
-      padding: 10px 20px;
-      background-color: blue;
-      color: white;
-      border: none;
-      cursor: pointer;
+    body{
+      background-color: black;
     }
+    .increase-volume {
+        position: absolute;
+        top: 25%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    .fake-increasevol{
+        position: absolute;
+        top: 75%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .decrease-volume{
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: red;
+        border: none;
+        cursor: pointer;
+    }
+    .fake-decreasevol{
+        position: absolute;
+        top: 90%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: red;
+        border: none;
+        cursor: pointer;
+    }
+
+    .volume-level {
+    position: absolute;
+    color: whitesmoke;
+    top:50%;
+    left:50%;
+    font-size: 24px;
+    margin: 0 20px;
+    }
+
+    .increase-popup-button {
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin: 5px;
+    }
+    .decrease-popup-volume{
+      position: absolute;
+        top: 90%;
+        left: 80%;
+        transform: translate(-50%, -50%);
+        padding: 10px 20px;
+        background-color: red;
+        border: none;
+        cursor: pointer;
+    }
+    .hint{
+      position:absolute;
+      background-color: white;
+      top: 50%;
+      left:50%;
+    }
+
   </style>
 </head>
 <body>
-  <button id="mainButton" class="popup-button">Click me to spawn a button!</button>
+    <button id="fake-increase" class="fake-increasevol">Increase volume</button>
+    <button id="increase" class="increase-volume">Increase Volume</button>
+    <button class="hint"id="help">Click For Help!</button>
+
+    <button id="decrease" class="decrease-volume"> Decrease Volume</button>
+    <button id="fake-decrease" class="fake-decreasevol">Decrease Volume</button>
+
+    <div class="volume-control">
+        <span id="value" class="volume-level">Volume = 100</span>
+    </div>
 
   <script>
-        // Function to create a random number between min and max
-    function getRandomNumber(min, max) {
-      return Math.floor(Math.random() * (max - min + 1) + min);
-    }
 
-    // Function to create a random popup button
-    function createPopupButton() {
-      const popupButton = document.createElement('button');
-      popupButton.textContent = 'Popup';
-      popupButton.classList.add('popup-button');
-
-      // Randomly position the button on the screen
-      popupButton.style.left = getRandomNumber(0, window.innerWidth - 100) + 'px';
-      popupButton.style.top = getRandomNumber(0, window.innerHeight - 50) + 'px';
-
-      // Add button to the document body
-      document.body.appendChild(popupButton);
-
-      // Remove the button after some time
-      setTimeout(() => {
-        document.body.removeChild(popupButton);
-      }, 3000); // Adjust the time as needed
-    }
-
-    // Main button click event listener
-    document.getElementById('mainButton').addEventListener('click', () => {
-      createPopupButton();
-    });
+        const increase = document.getElementById('increase');
+        const decrease = document.getElementById('decrease');
+        const volume = document.querySelector('value');
+        const help = document.querySelector('help');
+        
 
   </script>
 </body>

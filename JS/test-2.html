@@ -3,169 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Popup Buttons</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Moving and Limiting Button</title>
+  <link >
   <style>
-    .increase-volume {
-        position: absolute;
-        top: 25%;
-        left: 10%;
-        transform: translate(-50%, -50%);
-        padding: 10px 20px;
-        background-color: green;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-    yur.{
-       position: absolute;
-      top: 60%;
-      left: 30%;
-      padding: 10px 20px;
-      background-color: red;
-      color: black;
-      border: none;
-      cursor: pointer;
-
-    }
-    .gottem {
-      position: absolute;
-      top: 60%;
-      left: 30%;
-      padding: 10px 20px;
-      background-color: green;
-      color: white;
-      border: none;
-      cursor: pointer;
+    .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    z-index: 1000;
     }
 
-    .fake-increase{
-        position: absolute;
-        top: 75%;
-        left: 80%;
-        transform: translate(-50%, -50%);
-        padding: 10px 20px;
-        background-color: green;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
-
-    .decrease-volume{
-        position: absolute;
-        top: 30%;
-        left: 40%;
-        transform: translate(-50%, -50%);
-        padding: 10px 20px;
-        background-color: red;
-        border: none;
-        cursor: pointer;
-    }
-    .fake-decrease{
-        position: absolute;
-        top: 90%;
-        left: 80%;
-        transform: translate(-50%, -50%);
-        padding: 10px 20px;
-        background-color: red;
-        border: none;
-        cursor: pointer;
-    }
-
-    .volume-level {
+    .close {
     position: absolute;
-    top:50%;
-    left:50%;
-    font-size: 24px;
-    margin: 0 20px;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
     }
-
-    .increase-popup-button {
-        padding: 10px 20px;
-        background-color: green;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        margin: 5px;
-    }
-
   </style>
 </head>
 <body>
-    <button id="fake-increase" class="fake-increase">Increase volume</button>
-    <button id="increase" class="increase-volume">Increase Volume</button>
-
-    <button id="fake-increase" class="gottem">Increase volume</button>
-
-
-    <button id="decrease" class="decrease-volume"> Decrease Volume</button>
-    <button id="fake-decrease" class="fake-decrease">Decrease Volume</button>
-    <div class="volume-control">
-        <span class="volume-level">100</span>
+    <button id="popupButton1">Pop-up Button 1</button>
+    <button id="popupButton2">Pop-up Button 2</button>
+  
+    <div class="popup" id="popup1">
+      <span class="close" onclick="closePopup('popup1')">&times;</span>
+      <p>Pop-up Content for Button 1</p>
     </div>
-
+  
+    <div class="popup" id="popup2">
+      <span class="close" onclick="closePopup('popup2')">&times;</span>
+      <p>Pop-up Content for Button 2</p>
+    </div>
   <script>
-        const increase = document.getElementById('increase');
-        const decrease = document.getElementById('decrease');
-        const volume = document.querySelector(".volume-level");
 
-        function getRandomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
+        document.getElementById("popupButton1").addEventListener("click", function() {
+        document.getElementById("popup1").style.display = "block";
+        });
+
+        document.getElementById("popupButton2").addEventListener("click", function() {
+        document.getElementById("popup2").style.display = "block";
+        });
+
+        function closePopup(popupId) {
+        document.getElementById(popupId).style.display = "none";
         }
-
-        increase.addEventListener("click", function() {
-            let vol = volume.innerText
-            vol = parseInt(vol);
-            vol+= 10
-            volume.innerText = vol
-            speed= volume.innerText/50
-        });
-
-        decrease.addEventListener("click", function() {
-            let vol = volume.innerText
-            vol = parseInt(vol);
-            vol-= 10
-            volume.innerText = vol
-            speed = volume.innerText/50
-        });
-
-        // Function to move a button to a random position
-        function moveButton(button) {
-            const newTop = Math.random() * window.innerHeight;
-            const newLeft = Math.random() * window.innerWidth;
-            button.style.top = newTop + 'px';
-            button.style.left = newLeft + 'px';
-        }
-
-        // Add click event listeners to the buttons
-        increase.addEventListener('click', function() {
-            moveButton(increase);
-        });
-
-        decrease.addEventListener('click', function() {
-            moveButton(decrease);
-        });
-        function createPopupButton() {
-        const popupButton = document.createElement('button');
-        popupButton.textContent = 'increase volume';
-        popupButton.classList.add('gottem');
-
-      // Randomly position the button on the screen
-        popupButton.style.left = getRandomNumber(0, window.innerWidth - 100) + 'px';
-        popupButton.style.top = getRandomNumber(0, window.innerHeight - 50) + 'px';
-
-      // Add button to the document body
-        document.body.appendChild(popupButton);
-
-      // Remove the button after some time
-
-    }
-    // Main button click event listener
-    document.getElementById('fake-increase').addEventListener('click', () => {
-        createPopupButton();
-    });
-
-   
   </script>
+
 </body>
 </html>
